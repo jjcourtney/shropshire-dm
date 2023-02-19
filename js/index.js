@@ -10,8 +10,7 @@ const populateVehicle = () => {
     vehicleSelectElement.innerHTML = "";
 
     const type = vehicleTypeSelectElement.value
-    const selectedVehicles = vehicles[type];
-
+    const selectedVehicles = vehiclesData[type];
 
     selectedVehicles.forEach(({ name }) => {
 
@@ -23,7 +22,7 @@ const populateVehicle = () => {
 }
 
 const populateVehicleType = () => {
-    for (const vehicle in vehicles) {
+    for (const vehicle in vehiclesData) {
         const dropdownElement = document.createElement('option');
         dropdownElement.setAttribute('value', vehicle);
         dropdownElement.textContent = vehicle.charAt(0).toUpperCase() + vehicle.slice(1);
@@ -49,7 +48,7 @@ const displayCard = name => {
 
 const getVehicle = name => {
     const type = vehicleTypeSelectElement.value
-    const [vehicle] = vehicles[type].filter(vehicle => vehicle.name === name);
+    const [vehicle] = vehiclesData[type].filter(vehicle => vehicle.name === name);
     if (!vehicle) return { name, desc: "Please search again", card: "N/A" };
     return vehicle;
 }
