@@ -4,17 +4,7 @@ const vehicleFormElement = document.getElementById('vehicles-selection');
 const itemCardsElement = document.getElementById('item-cards');
 
 
-const populateVehicleType = () => {
-    for (const vehicle in vehicles) {
-        const dropdownElement = document.createElement('option');
-        dropdownElement.setAttribute('value', vehicle);
-        dropdownElement.textContent = vehicle;
-        vehicleTypeSelectElement.appendChild(dropdownElement);
-    }
 
-}
-
-populateVehicleType()
 
 const populateVehicle = () => {
     vehicleSelectElement.innerHTML = "";
@@ -32,6 +22,17 @@ const populateVehicle = () => {
     })
 }
 
+const populateVehicleType = () => {
+    for (const vehicle in vehicles) {
+        const dropdownElement = document.createElement('option');
+        dropdownElement.setAttribute('value', vehicle);
+        dropdownElement.textContent = vehicle.charAt(0).toUpperCase() + vehicle.slice(1);
+        vehicleTypeSelectElement.appendChild(dropdownElement);
+    }
+    populateVehicle()
+}
+
+populateVehicleType()
 
 const displayCard = name => {
     const vehicle = getVehicle(name);

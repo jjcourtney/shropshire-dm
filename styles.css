@@ -1,4 +1,25 @@
+form {
+  background-color: rgb(66, 66, 66);
+  width: 20em;
+  border-radius: 25px;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+select {
+  margin: auto;
+  display: block;
+  background-color: rgb(218, 218, 218);
+}
+.vehicles-span {
+  background-color: rgb(218, 218, 218);
+  font-size: large;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+}
 .card {
+  margin: auto;
   width: 20em;
   background-color: rgb(66, 66, 66);
   border-radius: 25px;
