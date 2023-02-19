@@ -1,3 +1,10 @@
+header {
+  background-color: rgb(66, 66, 66);
+  margin-bottom: 30px;
+  text-align: center;
+  height: 6em;
+}
+
 form {
   background-color: rgb(66, 66, 66);
   width: 20em;
@@ -10,6 +17,18 @@ select {
   margin: auto;
   display: block;
   background-color: rgb(218, 218, 218);
+}
+.title {
+  display: inline;
+  color: aliceblue;
+  padding-top: 20px;
+  font-family: "IM Fell English SC", serif;
+}
+.logo {
+  position: absolute;
+  left: 10px;
+  top: 1em;
+  right: auto;
 }
 .vehicles-span {
   background-color: rgb(218, 218, 218);
