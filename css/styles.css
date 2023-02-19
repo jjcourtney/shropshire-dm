@@ -48,7 +48,7 @@ select {
   background-color: rgb(66, 66, 66);
   border-radius: 25px;
   padding: 10px;
-  background-image: url(./bg.png);
+  background-image: url(./images/bg.png);
   background-size: contain;
 }
 
