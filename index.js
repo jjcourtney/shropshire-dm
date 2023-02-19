@@ -1,16 +1,37 @@
 const vehicleSelectElement = document.getElementById('vehicles');
+const vehicleTypeSelectElement = document.getElementById('vehicle-type');
 const vehicleFormElement = document.getElementById('vehicles-selection');
 const itemCardsElement = document.getElementById('item-cards');
-console.log(vehicleFormElement)
 
 
-mounts.forEach(({ name }) => {
-    console.log(name)
-    const dropdownElement = document.createElement('option');
-    dropdownElement.setAttribute('value', name);
-    dropdownElement.textContent = name;
-    vehicleSelectElement.appendChild(dropdownElement);
-})
+const populateVehicleType = () => {
+    for (const vehicle in vehicles) {
+        const dropdownElement = document.createElement('option');
+        dropdownElement.setAttribute('value', vehicle);
+        dropdownElement.textContent = vehicle;
+        vehicleTypeSelectElement.appendChild(dropdownElement);
+    }
+
+}
+
+populateVehicleType()
+
+const populateVehicle = () => {
+    vehicleSelectElement.innerHTML = "";
+
+    const type = vehicleTypeSelectElement.value
+    const selectedVehicles = vehicles[type];
+
+
+    selectedVehicles.forEach(({ name }) => {
+
+        const dropdownElement = document.createElement('option');
+        dropdownElement.setAttribute('value', name);
+        dropdownElement.textContent = name;
+        vehicleSelectElement.appendChild(dropdownElement);
+    })
+}
+
 
 const displayCard = name => {
     const vehicle = getVehicle(name);
@@ -26,7 +47,8 @@ const displayCard = name => {
 }
 
 const getVehicle = name => {
-    const [vehicle] = mounts.filter(vehicle => vehicle.name === name);
+    const type = vehicleTypeSelectElement.value
+    const [vehicle] = vehicles[type].filter(vehicle => vehicle.name === name);
     if (!vehicle) return { name, desc: "Please search again", card: "N/A" };
     return vehicle;
 }
@@ -39,4 +61,5 @@ const handleVehicleFormSubmit = event => {
 
 }
 
-vehicleFormElement.addEventListener("submit", handleVehicleFormSubmit)
+vehicleTypeSelectElement.addEventListener("change", populateVehicle)
+vehicleSelectElement.addEventListener("change", handleVehicleFormSubmit)

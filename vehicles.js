@@ -381,7 +381,7 @@ const air = [{
     desc: ``
 }]
 
-const vehicle = {
+const vehicles = {
     mounts,
     land,
     water,
@@ -395,5 +395,3 @@ const vehicle = {
     desc: ``
 }
  */
-
-console.log(mounts.filter(({ card }) => card === "3")[0].name)
