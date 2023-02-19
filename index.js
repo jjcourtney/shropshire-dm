@@ -17,8 +17,8 @@ const displayCard = name => {
     const cardItem = `
 <div class='card'>
 <h1 class='card-title'>${vehicle.name}</h1>
-<h3 class='card-title'>${vehicle.card}</h3>
-<p class='card-title'>${vehicle.desc}</p>
+<h3 class='card-type'>${vehicle.card}</h3>
+<p class='card-desc'>${vehicle.desc}</p>
 </div>
 `
     itemCardsElement.innerHTML = cardItem

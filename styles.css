@@ -1,0 +1,26 @@
+.card {
+  width: 20em;
+  background-color: rgb(66, 66, 66);
+  border-radius: 25px;
+  padding: 10px;
+  background-image: url(./bg.png);
+  background-size: contain;
+}
+
+.card-title {
+  background-color: aliceblue;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.card-type {
+  background-color: blue;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.card-desc {
+  background-color: rgb(218, 218, 218);
+  border-radius: 25px;
+  padding: 10px;
+}
