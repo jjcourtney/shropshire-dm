@@ -34,15 +34,33 @@ const populateVehicleType = () => {
 populateVehicleType()
 
 const displayCard = name => {
+    itemCardsElement.innerHTML = "";
     const vehicle = getVehicle(name);
-    const cardItem = `
-<div class='card'>
-<h1 class='card-title'>${vehicle.name}</h1>
-<h3 class='card-type'>${vehicle.card}</h3>
-<p class='card-desc'>${vehicle.desc}</p>
-</div>
-`
-    itemCardsElement.innerHTML = cardItem
+    const cardContainer = document.createElement('div');
+    cardContainer.setAttribute("class", "card");
+
+    const cardTitle = document.createElement('h1');
+    cardTitle.setAttribute("class", "card-title");
+    cardTitle.textContent = vehicle.name
+    cardContainer.append(cardTitle)
+
+    const cardValue = document.createElement('h3');
+    cardValue.setAttribute("class", "card-value");
+    cardValue.textContent = `Value: ${vehicle.card}`
+    cardContainer.append(cardValue)
+
+    const cardDesc = document.createElement('div');
+    cardDesc.setAttribute("class", "card-desc")
+    vehicle.desc.forEach((descLine) => {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = descLine;
+        cardDesc.appendChild(paragraph)
+
+    })
+
+    cardContainer.appendChild(cardDesc)
+
+    itemCardsElement.appendChild(cardContainer)
 
 }
 
