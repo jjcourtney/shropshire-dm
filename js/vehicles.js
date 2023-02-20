@@ -274,194 +274,247 @@ const land = [{
 }]
 const water = [{
     card: "Ace",
-    name: "",
+    name: "The Boogie Board",
     desc: [
-
+        "This panel of floating material can be used with a successful DC 12 Dexterity check (acrobatics) to travel at 60ft per round across the surface of any body of water within 200ft of a coastline.",
+        "While carrying the boogie board you have disadvantage on Charisma checks made to flirt, and disadvantage on saving throws against Otto’s Irresistible Dance.",
     ]
 },
 {
     card: "2",
-    name: "",
-    desc: ` `
+    name: "A Sieve",
+    desc: [
+        "To ride in the sieve a creature must have a Wisdom score of 8 or lower. Up to three creatures can ride in the sieve at a time.",
+        "The sieve has a speed through water of 120ft. so long as a mast is made out of a smoking pipe with a ribbon for a sail. It can travel to the Feywild, Material Plane, Beastlands, or Arboria at will.",
+    ]
 },
 {
     card: "3",
-    name: "",
+    name: "Siren’s Wings",
     desc: [
-
+        "A pair of wings that can be ridden across the surface of water at a speed of 60ft., hovering approximately 5ft above the surface at all times.",
+        "While you are riding the wings, you cannot be charmed or frightened, and you cannot be dragged beneath the surface of the water by any physical force.",
     ]
 },
 {
     card: "4",
-    name: "",
+    name: "The Umbrella (Inverted)",
     desc: [
-
+        "The umbrella is large enough to seat up to 3 people, has a swim speed of 20ft above water, and prevents all damage or potential harm that could come to its occupants as a result of water events such as storms, waterfalls, spouts, or any other similar phenomena. It is less than useless against creature attacks, and somehow only makes you wetter if it rains.",
     ]
 },
 {
     card: "5",
-    name: "",
+    name: "The Dugout",
     desc: [
-
+        "A kayak that glides through water as effortlessly and soundlessly as a crocodile. While you are in the kayak you have advantage on stealth checks, and are considered lightly obscured from creatures on dry land. The paddle counts as a rogue weapon for the purposes of administering sneak attack damage.",
     ]
 },
 {
     card: "6",
-    name: "",
+    name: "Ice-Breaker Hull",
     desc: [
-
+        "The hull of this ship contains a small fire spirit that can be agitated on a whim. The prow cuts through ice without any hindrance and the ship can travel at full speed through icy water.",
+        "When the ship touches or rams a creature or object, the target takes an additional 2d8 fire damage.",
+        "The prow sheds dim blue light out to 10ft. when the spirit is activated.",
     ]
 },
 {
     card: "7",
-    name: "",
+    name: "Marrow Boat",
     desc: [
-
+        "A seed that grows over the course of 24 days into a ship when planted within 10ft of any body of water. The boat ripens as it approaches its intended destination before falling gently to pieces. The boat is edible, providing sustenance for the entire journey, and upon completion of its trip, leaves behind a single, viable seed.",
     ]
 },
 {
     card: "8",
-    name: "",
+    name: "Coin-operated boat",
     desc: [
-
+        "This ship has a strange artificial gloominess about it, as if it were built by someone attempting to make it seem creepy. There is an automaton at one end with a face shaped into that of a skull with a visible slot between its front teeth. Players may announce their destination and pay the fee that the automaton announces:",
+        "Same plane of existence, 1 silver per 10 miles",
+        "Different plane of existence, 10 platinum and a specialist token that could take the form of a rare metal or gemstone that is dependent on the destination plane.",
     ]
 },
 {
     card: "9",
-    name: "",
+    name: "Ship in a Bottle",
     desc: [
-
+        "A full-sized ship in a vast glass bottle. This ship maintains a steady supply of air even when fully submerged. The ship can be changed at any time, a process taking no less than 1 month of dedicated work, replacing the contents with a ship of your choosing.",
+        "If the Cork is ever found and placed into the neck of the bottle, the entire device vanishes, taking ship and crew along with it into the plane of water, never to return.",
     ]
 },
+
 {
     card: "10",
-    name: "",
+    name: "The Black Lantern",
     desc: [
-
+        "A two-person craft that requires both parties to pedal for the propulsion to work. The vessel is in the shape of a toothy fish with a lantern hanging above its mouth.",
+        "The vessel has a speed of 15 ft.",
+        "The vessel, while in motion, creates a 60ft radius sphere of darkness around itself through which only its own lantern light is visible. The pilots can cause the vessel to make a bite attack (+12 to hit, 2d8 piercing damage and a Huge or smaller target is grappled).",
+        "The vessel is also capable of submerging, allowing both crew members to breathe easily whilst underwater. Creatures grappled by the boat do not gain this benefit.",
     ]
 },
 {
     card: "Page",
-    name: "",
+    name: "The Scuttlefish",
     desc: [
-
+        "This submersible vehicle is 200ft long and has a swim speed of 120ft. It has been fashioned in the likeness of a kuotoa god whose name is long forgotten, even to those who could pronounce it.",
+        "Creatures within the scuttlefish can breathe easily, requiring no exchange of air at any time (although gaseous effects do not disperse easily and linger for twice as long, such as Cloudkill).",
+        "The scuttlefish can grapple other seafaring vehicles and monsters up to twice its size. It has a Strength of 27 (+8) for the purpose of grapple checks.",
+        "The scuttlefish can conceal itself while submerged, and has a Dexterity score of 20 (+5) and proficiency (+5) in stealth checks.",
     ]
 },
 {
     card: "Knight",
-    name: "",
+    name: "Staff of the Desert Prophet",
     desc: [
-
+        "This quarterstaff can be used to cast the spell Destroy Water three times per day. Alternatively a creature may expend all three uses to create a space within a body of still or running water that can be travelled on foot, choosing one of the following effects:",
+        "The staff creates a path 15ft wide and 3 miles long that remains in place for 1 hour. All water within this space is harmlessly pushed aside. If the water would flow through the path, it is instead teleported from one side to the other, maintaining walls of water on either side. Creatures that swim cannot pass through this effect, except by crossing over the exposed land.",
+        "The staff creates a bubble of 30ft in radius that remains surrounding the bubble for 1 day. Water and Small or smaller creatures within the water are harmlessly pushed aside. Medium or larger creatures may attempt a DC 12 Strength save to breach the bubble, or can choose to follow the flow of water.",
     ]
 },
 {
     card: "Queen",
-    name: "",
+    name: "The Dragon Boat",
     desc: [
-
+        "This longship can hold up to 100 medium sized creatures, and has a natural swimming speed of 30ft without a crew. Furthermore, the boat can walk across land at a speed of 30ft.",
+        "The boat has a breath weapon that emanates from the figurehead; all creatures in a line 60ft long and 5ft wide must succeed on a Dexterity saving throw (DC 16) or take 10d6 lightning damage, or half as much on a successful one.",
+        "The boat must at all times be paid 5% of the loot from any successful adventure or raid which it facilitated, which it stores in its hold. If the crew fail to pay the boat, it turns into an adult blue dragon and beseiges the hometown of everyone in the crew.",
     ]
 },
 {
     card: "King",
-    name: "",
+    name: "Mother Hydra",
     desc: [
-
+        "A five mast galleon with the figurehead of a five-headed hydra. Each head of the hydra is a cannon that fires a 180ft line of a damage type (acid, cold, fire, lightning and poison respectively), each one deals 5d10 damage, and twice as much to vehicles.",
+        "Each time Mother Hydra takes damage it grows a new addition, such as a forecastle, a new mast, a store, a new crane, a fishing boom, or some other new accessory or addition to its size.",
+        "Mother Hydra at this time has 4 levels, a crew capacity of 500, 32 cannons per side and 8 in the fore and aft each, a two level aftcastle, a 1 level forecastle, and can carry up to 200 tonnes of goods in addition to its crew supplement.",
     ]
 }]
-const air = [{
-    card: "Ace",
-    name: "",
-    desc: [
 
+const air = [{
+
+    card: "Ace",
+    name: "Screaming Bird",
+    desc: [
+        "This airbladder has a bundle of feathers attached at the nozzle end. When fully inflated and released the Screaming Bird emits a high pitched scream that can be heard for 200ft. Any creature holding the Bird flies 2d100ft in a random direction.",
+        "The Bird can be inflated to contain as many as 10 charges, each charge lasts 1 round, and the discharging air propels it in a new direction each round. If the Bird collides with a solid object, a creature holding it takes a number of d6 bludgeoning damage equal to the number of feet travelled this round divided by 10.",
     ]
 },
 {
     card: "2",
-    name: "",
-    desc: ` `
+    name: "The Line",
+    desc: [
+        "Two posts of different lengths and a simple handle. Placing both posts upright and affixed to the ground, a creature holding onto the handle flies in a straight line from the taller post to the shorter. Both posts must be on the same plane of existence, and the creature never touches the ground while holding the handle.",
+        "The Line confers no special ability to avoid obstacles or hazards, and travelling this way for more than 1 hour requires a Strength check, DC 8 + the number of hours you spend on The Line. If you fail, you fall.",
+    ]
 },
 {
     card: "3",
-    name: "",
+    name: "Magic Mop",
     desc: [
-
+        "The mop has a flight speed of 120ft and a swim speed of 60ft. While underwater you are encapsulated in a breathable bubble that lasts for 2 hours, but bursts if you submerge below 1 mile beneath the water’s surface.",
     ]
 },
 {
     card: "4",
-    name: "",
+    name: "Sky Snake",
     desc: [
-
+        "A 100ft serpent made out of painted wood, held aloft by wings of many colours. To mount the Sky Snake a creature only needs to stand underneath it and hope to catch a ride.",
+        "The Sky Snake never lands, cannot be piloted without a wish spell, and will continue along its same circuitous route until the end of time. To get off, a creature need only declare that it has arrived at its destination.",
+        "While on board, creatures will only be aware of any other creature with whom they boarded, and one bald and bearded old man who will casually impart nonsensical “wisdom” with anyone he rides with.",
     ]
 },
 {
     card: "5",
-    name: "",
+    name: "Aarakocra Wings",
     desc: [
-
+        "A pair of feathered wings that must be flapped by hand in order to achieve a flight speed equal to twice your Strength score.",
+        "While wielding these wings you can cast Gust at will, and Gust of Wind up to three times per day. Strength is your ability modifier for these spells.",
     ]
 },
 {
     card: "6",
-    name: "",
+    name: "Bleeding Feather Skiff",
     desc: [
-
+        "A fast moving, small airship that can turn faster than a bird on the wing. The airship grants a +4 bonus to Dexterity saves to all creatures on board.",
+        "The airship counts as undead for the purposes of rules that pertain to undead creatures, and automatically fails checks against effects that would turn undead. If the airship collides with or intentionally rams an object or creature, the target takes 2d6 necrotic damage.",
     ]
 },
 {
     card: "7",
-    name: "",
+    name: "The Owlblimp",
     desc: [
-
+        "A childish facsimile of an owlbear made into a large inflatable, which is attached to a simple cart by rope. Up to 8 creatures can ride in the cart.",
+        "The balloon itself is a construct, it is vulnerable to slashing damage, resistant to bludgeoning damage, has a flying speed of 40ft, but otherwise has the statistics of an owlbear. It can fight alongside the party members, but in doing so risks tipping them out of the cart.",
+        "The Owlblimp and any creature actively riding in its cart have advantage on Charisma (performance) checks made to entertain children.",
     ]
 },
 {
     card: "8",
-    name: "",
+    name: "It Came With a Chair",
     desc: [
-
+        "A scroll bearing an invocation in a blasphemous language that must be spoken with two mouths beneath a blackened sun. When uttered, a tendril of monstrous size belonging to an unknowable entity descends with an extravagant chair resting in its coils.",
+        "When a creature takes a seat in the chair, they name a destination that must be under open sky. Once named, the creature is taken to their destination, travelling high above all landmasses and other geographical features.",
+        "Anything that witnesses your arrival must succeed on a DC 20 Charisma saving throw or take a random form of long-term madness.",
     ]
 },
 {
     card: "9",
-    name: "",
+    name: "Cloud of Plenty",
     desc: [
-
+        "This permanent cloud formation contains an invisible solid surface approximately 100x30ft. that can be stood upon and controlled like a ship from a small podium that resembles a short pillar of frost. The cloud will frequently create small piles of food and water, both on board and -while the cloud is in flight -underneath, causing small deluges of food. The food offered by the cloud can be changed by planting seeds in the invisible surface.",
+        "The surface of the cloud is soft and surprisingly dry, but whenever a creature attempts a long rest, roll 1d6. On a roll of 1, that creature’s sleep will be disturbed by the sudden appearance of food around their person.",
     ]
 },
 {
     card: "10",
-    name: "",
+    name: "Wild Hunter’s Sled",
     desc: [
-
+        "Requiring nothing more than a tame animal to draw the sled, it can move at a flight speed of 180ft., and it comes equipped with the following special features:",
+        "The sled has advantage on Stealth checks while lightly obscured by cold weather.",
+        "A quiver inside the vehicle supplies an unlimited amount of ammunition of your choosing.",
+        "Whenever you make an attack with a ranged weapon you do not have disadvantage for shooting at long range.",
+        "You have resistance to cold damage and the first time each day you take a level of exhaustion due to cold weather effects, you ignore it.",
+        "Whenever you take an attack action with a ranged weapon you can make an additional attack. The attack granted this way has disadvantage on the attack roll.",
     ]
 },
 {
     card: "Page",
-    name: "",
+    name: "Hummingbird Feather Cap",
     desc: [
-
+        "A bycoket adorned with a spectrum of bright feathers. At a command the feathers whir into life lifting you off the ground. You gain a flight speed of 20ft, advantage on Dexterity saves while airborne, and you are considered under the effects of the Haste spell at all times. If you use the power of the hat for 10 minutes, you gain a level of exhaustion every 10 minutes. These levels are removed via a long rest, or by consuming a large amount of high-sugar content foods.",
     ]
 },
 {
     card: "Knight",
-    name: "",
+    name: "Paper Plane",
     desc: [
-
+        "A single A4 sheet of off-white paper, it bears small marks of ink as though words were once on the page but have faded away, and creases across its surface suggest that it has been used as a paper plane on several occasions.",
+        "Players may write the details of an airborne vessel onto the paper and then fold it into the shape of a plane (altogether taking 5 minutes). The paper becomes a facsimile of what the players described to the letter if not the spirit of the description.",
+        "Any part of the ship that has been described will be made of paper or card of varying degrees of thickness. Rope remains fairly strong, hulls are thin but broadly durable, and water only becomes an issue in extremely heavy rain. Fires spread twice as fast as normal. Weapons disintegrate after a single use.",
     ]
 },
 {
     card: "Queen",
-    name: "",
+    name: "Fortified Cape",
     desc: [
-
+        "This cape resembles the crenelations of a castle’s defensive walls. It can be removed and cast out to create a small tower made of the same delicate fabric of the cape. The tower can be directed to fly in any direction, carrying up to 10 Medium creatures inside.",
+        "The castle comes with a telescope and provides cover to all creatures inside or manning its battlements.",
+        "There is a 10% chance that a fortified cape is sentient, and has a rambunctious and adventurous personality, that may cause it to erratically “follow its heart” and seek out new destinations and undiscovered lands.",
     ]
 },
 {
     card: "King",
-    name: "",
-    desc: [
-
+    name: "Dragonblimp",
+    desc: ["The figurehead of this inflatable ship is in the form of a dragon with jaws agape, threatening terrible destruction upon all who approach. The blimp has a breath weapon akin to an adult dragon, and resistance to a damage type. Both are dependent on the fuel that the blimp is given:",
+        "Black - Humanoid corpses (1/day) or carrion of triple the weight, and 1lb of saltpetre.",
+        "Blue - Copper powder, up to 100 GP worth per day and the same in quartz crystals, or half as much if the materials were stolen.",
+        "Green - Secrets whispered into the fuel tank, either those of the whisperer or those that it has learned, especially in the form of documents and journals. Exotic poisons worth up to 100 GP per day.",
+        "Red - Up to 100 GP per day in alchemist’s fire, administered by a fearful creature.",
+        "White - The meat of a powerful creature that has been hunted to death, and frozen no more than a week.",
+        "If fed gold the ship’s speed doubles, but loses all offensive capabilities.",
+        "The ship has all the properties and abilities of the dragon it last became, except that it has a crew capacity of 100 medium creatures.",
     ]
 }]
 
