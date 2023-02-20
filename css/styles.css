@@ -1,3 +1,6 @@
+body {
+  font-family: "IM Fell English SC", serif;
+}
 header {
   background-color: rgb(66, 66, 66);
   margin-bottom: 30px;
@@ -26,7 +29,6 @@ select {
 .title {
   display: inline;
   color: aliceblue;
-
   font-family: "IM Fell English SC", serif;
 }
 .logo {
@@ -40,7 +42,7 @@ select {
   font-size: large;
   padding: 5px;
   margin-bottom: 10px;
-  border-radius: 25px;
+  border-radius: 10px;
 }
 .card {
   margin: auto;
@@ -55,14 +57,14 @@ select {
 .card-title {
   background-color: rgb(218, 218, 218);
   text-align: center;
-  border-radius: 25px;
+  border-radius: 10px;
   margin-bottom: 10px;
 }
 
 .card-value {
   background-color: rgb(218, 218, 218);
   text-align: center;
-  border-radius: 25px;
+  border-radius: 10px;
   padding: 10px;
 }
 
@@ -77,4 +79,19 @@ footer img {
   height: 3em;
   width: 3em;
   margin-left: 3em;
+}
+
+select {
+  appearance: none;
+  background-color: rgb(218, 218, 218);
+  border: solid 1px #ccc;
+  padding: 5px 1em 5px 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  text-align: center;
+  border-radius: 10px;
 }
