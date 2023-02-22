@@ -4,18 +4,27 @@ const vehicleFormElement = document.getElementById('vehicles-selection');
 const itemCardsElement = document.getElementById('item-cards');
 
 
+let currentItems;
+
 const getClassTypes = async classType => {
     const response = await fetch(`https://shropshire-dm-be.vercel.app/api/${classType}/types`)
     const types = await response.json();
-    console.log(types)
-
+    return types;
 };
 
-const populateVehicle = () => {
+const getItems = async (type) => {
+
+    const response = await fetch(`https://shropshire-dm-be.vercel.app/api/vehicles/type/${type.toLowerCase()}`)
+    const items = await response.json();
+    currentItems = items;
+    return items;
+}
+
+const populateVehicle = async () => {
     vehicleSelectElement.innerHTML = "";
 
     const type = vehicleTypeSelectElement.value
-    const selectedVehicles = vehiclesData[type];
+    const selectedVehicles = await getItems(type)
 
     selectedVehicles.forEach(({ name }) => {
 
@@ -25,20 +34,21 @@ const populateVehicle = () => {
         vehicleSelectElement.appendChild(dropdownElement);
     })
 }
+const populateTypes = async (type = 'vehicles') => {
+    const { types } = await getClassTypes(type);
 
-const populateVehicleType = () => {
-    for (const vehicle in vehiclesData) {
+    types.forEach(curType => {
         const dropdownElement = document.createElement('option');
-        dropdownElement.setAttribute('value', vehicle);
-        dropdownElement.textContent = vehicle.charAt(0).toUpperCase() + vehicle.slice(1);
+        dropdownElement.setAttribute('value', curType);
+        dropdownElement.textContent = curType.charAt(0).toUpperCase() + curType.slice(1);
         vehicleTypeSelectElement.appendChild(dropdownElement);
-    }
-    populateVehicle()
+    })
 }
 
-populateVehicleType()
+populateTypes()
 
 const displayCard = name => {
+
     itemCardsElement.innerHTML = "";
     const vehicle = getVehicle(name);
     const cardContainer = document.createElement('div');
@@ -71,7 +81,7 @@ const displayCard = name => {
 
 const getVehicle = name => {
     const type = vehicleTypeSelectElement.value
-    const [vehicle] = vehiclesData[type].filter(vehicle => vehicle.name === name);
+    const [vehicle] = currentItems.filter(vehicle => vehicle.name === name);
     if (!vehicle) return { name, desc: "Please search again", card: "N/A" };
     return vehicle;
 }
