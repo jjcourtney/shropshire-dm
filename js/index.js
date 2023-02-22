@@ -4,7 +4,12 @@ const vehicleFormElement = document.getElementById('vehicles-selection');
 const itemCardsElement = document.getElementById('item-cards');
 
 
+const getClassTypes = async classType => {
+    const response = await fetch(`https://shropshire-dm-be.vercel.app/api/${classType}/types`)
+    const types = await response.json();
+    console.log(types)
 
+};
 
 const populateVehicle = () => {
     vehicleSelectElement.innerHTML = "";
@@ -81,3 +86,6 @@ const handleVehicleFormSubmit = event => {
 
 vehicleTypeSelectElement.addEventListener("change", populateVehicle)
 vehicleSelectElement.addEventListener("change", handleVehicleFormSubmit)
+
+
+getClassTypes('vehicles')
