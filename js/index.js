@@ -1,6 +1,6 @@
-const vehicleSelectElement = document.getElementById('vehicles');
-const vehicleTypeSelectElement = document.getElementById('vehicle-type');
-const vehicleFormElement = document.getElementById('vehicles-selection');
+const vehicleSelectElement = document.getElementById('item');
+const vehicleTypeSelectElement = document.getElementById('item-type');
+const vehicleFormElement = document.getElementById('items-selection');
 const itemCardsElement = document.getElementById('item-cards');
 
 
