@@ -1,9 +1,12 @@
-const vehicleSelectElement = document.getElementById('item');
-const vehicleTypeSelectElement = document.getElementById('item-type');
-const vehicleFormElement = document.getElementById('items-selection');
+const itemSelectElement = document.getElementById('item');
+const itemTypeSelectElement = document.getElementById('item-type');
 const itemCardsElement = document.getElementById('item-cards');
 
+// Global variable to store the current items
+// This is used to avoid making another API call when the user selects an item
+// from the dropdown
 
+// could be a good idea to use a local storage to store the data and then use it to populate the dropdowns
 let currentItems;
 
 const getClassTypes = async classType => {
@@ -20,18 +23,18 @@ const getItems = async (type) => {
     return items;
 }
 
-const populateVehicle = async () => {
-    vehicleSelectElement.innerHTML = "";
+const populateItems = async () => {
+    itemSelectElement.innerHTML = "";
 
-    const type = vehicleTypeSelectElement.value
-    const selectedVehicles = await getItems(type)
+    const type = itemTypeSelectElement.value
+    const selectedItems = await getItems(type)
 
-    selectedVehicles.forEach(({ name }) => {
+    selectedItems.forEach(({ name }) => {
 
         const dropdownElement = document.createElement('option');
         dropdownElement.setAttribute('value', name);
         dropdownElement.textContent = name;
-        vehicleSelectElement.appendChild(dropdownElement);
+        itemSelectElement.appendChild(dropdownElement);
     })
 }
 const populateTypes = async (type = 'vehicles') => {
@@ -41,7 +44,7 @@ const populateTypes = async (type = 'vehicles') => {
         const dropdownElement = document.createElement('option');
         dropdownElement.setAttribute('value', curType);
         dropdownElement.textContent = curType.charAt(0).toUpperCase() + curType.slice(1);
-        vehicleTypeSelectElement.appendChild(dropdownElement);
+        itemTypeSelectElement.appendChild(dropdownElement);
     })
 }
 
@@ -80,22 +83,23 @@ const displayCard = name => {
 }
 
 const getVehicle = name => {
-    const type = vehicleTypeSelectElement.value
-    const [vehicle] = currentItems.filter(vehicle => vehicle.name === name);
-    if (!vehicle) return { name, desc: "Please search again", card: "N/A" };
-    return vehicle;
+
+    const [item] = currentItems.filter(item => item.name === name);
+
+    if (!item) return { name, desc: "Please search again", card: "N/A" };
+    return item;
 }
 
-const handleVehicleFormSubmit = event => {
+const handleItemSelection = event => {
     event.preventDefault()
-    const vehicle = vehicleSelectElement.value
-    displayCard(vehicle)
+    const item = itemSelectElement.value
+    displayCard(item)
 
 
 }
 
-vehicleTypeSelectElement.addEventListener("change", populateVehicle)
-vehicleSelectElement.addEventListener("change", handleVehicleFormSubmit)
+itemTypeSelectElement.addEventListener("change", populateItems)
+itemSelectElement.addEventListener("change", handleItemSelection)
 
 
 getClassTypes('vehicles')
