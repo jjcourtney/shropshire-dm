@@ -1,6 +1,8 @@
 const itemSelectElement = document.getElementById('item');
 const itemTypeSelectElement = document.getElementById('item-type');
 const itemCardsElement = document.getElementById('item-cards');
+const vehicleBtn = document.getElementById('vehicle-button');
+const magicItemBtn = document.getElementById('magic-items-button');
 
 // Global variable to store the current items
 // This is used to avoid making another API call when the user selects an item
@@ -8,6 +10,7 @@ const itemCardsElement = document.getElementById('item-cards');
 
 // could be a good idea to use a local storage to store the data and then use it to populate the dropdowns
 let currentItems;
+let currentType;
 
 const getClassTypes = async classType => {
     const response = await fetch(`https://shropshire-dm-be.vercel.app/api/${classType}/types`)
@@ -15,9 +18,9 @@ const getClassTypes = async classType => {
     return types;
 };
 
-const getItems = async (type) => {
+const getItems = async (classType, type) => {
 
-    const response = await fetch(`https://shropshire-dm-be.vercel.app/api/vehicles/type/${type.toLowerCase()}`)
+    const response = await fetch(`https://shropshire-dm-be.vercel.app/api/${classType}/type/${type}`)
     const items = await response.json();
     currentItems = items;
     return items;
@@ -27,8 +30,7 @@ const populateItems = async () => {
     itemSelectElement.innerHTML = "";
 
     const type = itemTypeSelectElement.value
-    const selectedItems = await getItems(type)
-
+    const selectedItems = await getItems(currentType, type)
     selectedItems.forEach(({ name }) => {
 
         const dropdownElement = document.createElement('option');
@@ -37,9 +39,11 @@ const populateItems = async () => {
         itemSelectElement.appendChild(dropdownElement);
     })
 }
-const populateTypes = async (type = 'vehicles') => {
-    const { types } = await getClassTypes(type);
 
+const populateTypes = async (type = 'vehicles') => {
+    currentType = type;
+    const { types } = await getClassTypes(type);
+    itemTypeSelectElement.innerHTML = "";
     types.forEach(curType => {
         const dropdownElement = document.createElement('option');
         dropdownElement.setAttribute('value', curType);
@@ -100,6 +104,8 @@ const handleItemSelection = event => {
 
 itemTypeSelectElement.addEventListener("change", populateItems)
 itemSelectElement.addEventListener("change", handleItemSelection)
+magicItemBtn.addEventListener("click", () => populateTypes('magic-items'))
+vehicleBtn.addEventListener("click", () => populateTypes('vehicles'))
 
 
 getClassTypes('vehicles')
