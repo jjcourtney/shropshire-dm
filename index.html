@@ -19,19 +19,23 @@
       <img src="./images/bg.png" class="logo" />
       <br />
       <h1 class="title">Shropshire DM Tarrot decks</h1>
+      <nav>
+        <button class="navBtn" id="vehicle-button" data-item-type="vehicle">Vehicles</button>
+        <button class="navBtn" id="magic-items-button" data-item-type="magic-items">Magic Items</button>
+      </nav>
     </header>
     <main>
-      <form id="vehicles-selection">
+      <form id="items-selection">
         
-        <span class="vehicles-span">Choose a vehicle</span>
+        <span class="items-span">Choose a Item</span>
         <br />
         <br />
         <div class="custom-select" >
-        <select name="vehicles-type" id="vehicle-type"></select>
+        <select name="item-type" id="item-type"></select>
         </div>
         <br />
         <div custom-select" >
-        <select name="vehicles" id="vehicles"></select>
+        <select name="item" id="item"></select>
         </div>
       </form>
       <br /><br />
@@ -54,7 +58,5 @@
       /></a>
     </footer>
   </body>
-  <script src="./js/vehicles.js"></script>
-  <script src="./js/magicItems.js"></script>
   <script src="./js/index.js"></script>
 </html>

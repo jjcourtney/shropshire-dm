@@ -1,39 +1,61 @@
-const vehicleSelectElement = document.getElementById('vehicles');
-const vehicleTypeSelectElement = document.getElementById('vehicle-type');
-const vehicleFormElement = document.getElementById('vehicles-selection');
+const itemSelectElement = document.getElementById('item');
+const itemTypeSelectElement = document.getElementById('item-type');
 const itemCardsElement = document.getElementById('item-cards');
+const vehicleBtn = document.getElementById('vehicle-button');
+const magicItemBtn = document.getElementById('magic-items-button');
 
+// Global variable to store the current items
+// This is used to avoid making another API call when the user selects an item
+// from the dropdown
 
+// could be a good idea to use a local storage to store the data and then use it to populate the dropdowns
+let currentItems;
+let currentType;
 
+const getClassTypes = async classType => {
+    const response = await fetch(`https://shropshire-dm-be.vercel.app/api/${classType}/types`)
+    const types = await response.json();
+    return types;
+};
 
-const populateVehicle = () => {
-    vehicleSelectElement.innerHTML = "";
+const getItems = async (classType, type) => {
 
-    const type = vehicleTypeSelectElement.value
-    const selectedVehicles = vehiclesData[type];
+    const response = await fetch(`https://shropshire-dm-be.vercel.app/api/${classType}/type/${type}`)
+    const items = await response.json();
+    currentItems = items;
+    return items;
+}
 
-    selectedVehicles.forEach(({ name }) => {
+const populateItems = async () => {
+    itemSelectElement.innerHTML = "";
+
+    const type = itemTypeSelectElement.value
+    const selectedItems = await getItems(currentType, type)
+    selectedItems.forEach(({ name }) => {
 
         const dropdownElement = document.createElement('option');
         dropdownElement.setAttribute('value', name);
         dropdownElement.textContent = name;
-        vehicleSelectElement.appendChild(dropdownElement);
+        itemSelectElement.appendChild(dropdownElement);
     })
 }
 
-const populateVehicleType = () => {
-    for (const vehicle in vehiclesData) {
+const populateTypes = async (type = 'vehicles') => {
+    currentType = type;
+    const { types } = await getClassTypes(type);
+    itemTypeSelectElement.innerHTML = "";
+    types.forEach(curType => {
         const dropdownElement = document.createElement('option');
-        dropdownElement.setAttribute('value', vehicle);
-        dropdownElement.textContent = vehicle.charAt(0).toUpperCase() + vehicle.slice(1);
-        vehicleTypeSelectElement.appendChild(dropdownElement);
-    }
-    populateVehicle()
+        dropdownElement.setAttribute('value', curType);
+        dropdownElement.textContent = curType.charAt(0).toUpperCase() + curType.slice(1);
+        itemTypeSelectElement.appendChild(dropdownElement);
+    })
 }
 
-populateVehicleType()
+populateTypes()
 
 const displayCard = name => {
+
     itemCardsElement.innerHTML = "";
     const vehicle = getVehicle(name);
     const cardContainer = document.createElement('div');
@@ -65,19 +87,25 @@ const displayCard = name => {
 }
 
 const getVehicle = name => {
-    const type = vehicleTypeSelectElement.value
-    const [vehicle] = vehiclesData[type].filter(vehicle => vehicle.name === name);
-    if (!vehicle) return { name, desc: "Please search again", card: "N/A" };
-    return vehicle;
+
+    const [item] = currentItems.filter(item => item.name === name);
+
+    if (!item) return { name, desc: "Please search again", card: "N/A" };
+    return item;
 }
 
-const handleVehicleFormSubmit = event => {
+const handleItemSelection = event => {
     event.preventDefault()
-    const vehicle = vehicleSelectElement.value
-    displayCard(vehicle)
+    const item = itemSelectElement.value
+    displayCard(item)
 
 
 }
 
-vehicleTypeSelectElement.addEventListener("change", populateVehicle)
-vehicleSelectElement.addEventListener("change", handleVehicleFormSubmit)
+itemTypeSelectElement.addEventListener("change", populateItems)
+itemSelectElement.addEventListener("change", handleItemSelection)
+magicItemBtn.addEventListener("click", () => populateTypes('magic-items'))
+vehicleBtn.addEventListener("click", () => populateTypes('vehicles'))
+
+
+getClassTypes('vehicles')
