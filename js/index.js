@@ -12,9 +12,15 @@ const magicItemBtn = document.getElementById('magic-items-button');
 let currentItems;
 let currentType;
 
+// This function is used to get the types of a class / deck from the API
 const getClassTypes = async classType => {
+
+    const lastSearch = JSON.parse(localStorage.getItem('last-type-fetch'));
+    if (lastSearch[0] === classType) return lastSearch[1];
+
     const response = await fetch(`https://shropshire-dm-be.vercel.app/api/${classType}/types`)
     const types = await response.json();
+    localStorage.setItem('last-type-fetch', JSON.stringify([classType, types]))
     return types;
 };
 
