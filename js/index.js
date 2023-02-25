@@ -54,6 +54,7 @@ const populateItems = async () => {
 }
 
 const populateTypes = async (type = 'vehicles') => {
+    itemSelectElement.innerHTML = "";
     currentType = type;
     const { types } = await getClassTypes(type);
     itemTypeSelectElement.innerHTML = "";
