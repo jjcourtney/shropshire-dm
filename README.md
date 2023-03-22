@@ -1,20 +1,38 @@
-# Shropshire DM Tarrot Deck
+# create-svelte
 
-This is a website to show the content created by Shropshire DM, with the help of his twitch community.
-His twitch stream can be found at [https://www.twitch.tv/shropshiredm](https://www.twitch.tv/shropshiredm)
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-## Current deployment
+## Creating a project
 
-You can find the current deployment of this website at [https://jjcourtney.github.io/shropshire-dm/](https://jjcourtney.githubio/shropshire-dm/)
+If you're seeing this, you've probably already done this step. Congrats!
 
-## Original document
+```bash
+# create a new project in the current directory
+npm create svelte@latest
 
-The content of the google documents are open source
+# create a new project in my-app
+npm create svelte@latest my-app
+```
 
-You can find the original document [here](https://drive.google.com/open?id=1FMkZ93-8fvwgW0QSFGrM5cz0NjkxG4Yw)
+## Developing
 
-## Questions and issues
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-Please feel free to reach out if you have any questions or issues:
+```bash
+npm run dev
 
-My github is [jjcourtney](https://github.com/jjcourtney)
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
