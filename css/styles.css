@@ -5,20 +5,29 @@ Current breaking width is 600px
   --main-bg-color: rgb(66, 66, 66);
   --main-selection-color: rgb(218, 218, 218);
 }
+main {
+  min-height: 70vh;
+}
+
 body {
   font-family: "IM Fell English SC", serif;
+  background-image: url("../images/splash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 header {
   background-color: var(--main-bg-color);
   margin-bottom: 30px;
   text-align: center;
   height: 6em;
+  border-radius: 25px;
 }
 footer {
   background-color: var(--main-bg-color);
   margin-top: 30px;
   text-align: center;
   height: 6em;
+  border-radius: 25px;
 }
 form {
   background-color: var(--main-bg-color);
