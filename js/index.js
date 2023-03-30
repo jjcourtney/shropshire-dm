@@ -40,6 +40,10 @@ const populateItems = async () => {
 
   const type = itemTypeSelectElement.value;
   const selectedItems = await getItems(currentType, type);
+  itemSelectElement.classList.remove("bg-gray-400");
+
+  itemSelectElement.appendChild(document.createElement("option"));
+  itemSelectElement.classList.add("bg-gray-400");
   selectedItems.forEach(({ name }) => {
     const dropdownElement = document.createElement("option");
     dropdownElement.setAttribute("value", name);
@@ -49,10 +53,20 @@ const populateItems = async () => {
 };
 
 const populateTypes = async (type = "vehicles") => {
+  itemSelectElement.classList.remove("bg-gray-400");
+  vehicleBtn.classList.remove("bg-gray-400");
+  magicItemBtn.classList.remove("bg-gray-400");
+  booksBtn.classList.remove("bg-gray-400");
+  const selectedItems = document.getElementById(
+    `${type == "vehicles" ? "vehicle" : type}-button`
+  );
+  selectedItems.classList.add("bg-gray-400");
   itemSelectElement.innerHTML = "";
   currentType = type;
   const { types } = await getClassTypes(type);
   itemTypeSelectElement.innerHTML = "";
+  itemTypeSelectElement.classList.add("bg-gray-400");
+  itemTypeSelectElement.appendChild(document.createElement("option"));
   types.forEach((curType) => {
     const dropdownElement = document.createElement("option");
     dropdownElement.setAttribute("value", curType);
@@ -88,7 +102,7 @@ const displayCard = (name) => {
   const cardTitle = document.createElement("h1");
   cardTitle.setAttribute(
     "class",
-    "card-title bg-gray-200 rounded-l-lg p-2 mb-5"
+    "card-title  w-full bg-gray-400 rounded-l-lg p-2 mb-5"
   );
 
   cardTitle.textContent = vehicle.name;
@@ -99,7 +113,7 @@ const displayCard = (name) => {
   const cardValue = document.createElement("h3");
   cardValue.setAttribute(
     "class",
-    "card-value w-full  bg-gray-200 rounded-l-lg p-2 mb-5"
+    "card-value  w-full bg-gray-400 rounded-l-lg p-2 mb-5"
   );
   cardValue.textContent = `Value: ${vehicle.card}`;
   selectedItem.append(cardValue);
