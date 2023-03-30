@@ -53,10 +53,12 @@ const populateItems = async () => {
 };
 
 const populateTypes = async (type = "vehicles") => {
+  // ensure the classes are not highlighted
   itemSelectElement.classList.remove("bg-gray-400");
   vehicleBtn.classList.remove("bg-gray-400");
   magicItemBtn.classList.remove("bg-gray-400");
   booksBtn.classList.remove("bg-gray-400");
+
   const selectedItems = document.getElementById(
     `${type == "vehicles" ? "vehicle" : type}-button`
   );
@@ -144,6 +146,7 @@ const handleItemSelection = (event) => {
   displayCard(item);
 };
 
+// Event listeners
 itemTypeSelectElement.addEventListener("change", populateItems);
 itemSelectElement.addEventListener("change", handleItemSelection);
 magicItemBtn.addEventListener("click", () => populateTypes("magic-items"));
