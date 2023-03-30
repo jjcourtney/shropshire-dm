@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./css/styles.css" />
 
     <title>Shropshire DM Tarot decks</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/fav.ico" />
   </head>
 
   <body class="grid grid-rows-6 h-screen w-screen">
@@ -90,15 +91,6 @@
               </div>
             </form>
           </div>
-          <div class="bg-gray-500 row-span-2 text-center" id="selected-item">
-            <h1 class="card-title bg-gray-400 rounded-l-lg p-2 mb-5 mt-5">
-              Item Name
-            </h1>
-
-            <h3 class="card-value w-full bg-gray-400 rounded-l-lg p-2 mb-5">
-              Value
-            </h3>
-          </div>
         </div>
         <div
           id="item-cards"
@@ -111,7 +103,17 @@
               background: url(./images/splash1.jpg) no-repeat center center;
               background-size: cover;
             "
-          ></div>
+          >
+            <div class="row-span-2 text-center" id="selected-item">
+              <h1 class="card-title bg-gray-400 rounded-r-lg p-2 mb-5">
+                Item Name
+              </h1>
+
+              <h3 class="card-value w-full bg-gray-400 rounded-r-lg p-2 mb-5">
+                Value
+              </h3>
+            </div>
+          </div>
         </div>
       </section>
       <section class="right bg-gray-500 col-span-1"></section>
