@@ -42,30 +42,32 @@
       </div>
       <div class="row-span-3 bg-gray-500"></div>
     </header>
-    <main class="grid grid-cols-5 w-screen row-span-4 h-full">
-      <section class="left bg-gray-500 col-span-1"></section>
+    <main class="grid lg:grid-cols-5 w-screen row-span-4 h-full bg-gray-500">
       <section
-        class="middle bg-gray-500 col-span-3 grid grid-cols-3 overflow-hidden"
+        class="left hidden lg:inline bg-gray-500 lg:col-span-1"
+      ></section>
+      <section
+        class="middle bg-gray-500 row-span-6 lg:col-span-3 grid lg:grid-cols-3 overflow-hidden"
       >
-        <div class="col-span-1 grid grid-rows-6">
+        <div class="row-span-1 grid lg:col-span-1 lg:grid-rows-6">
           <div class="row-span-3">
             <div class="flex flex-wrap justify-center">
               <div
-                class="navBtn w-full bg-gray-200 rounded-l-lg p-2 mb-5 hover:bg-gray-400"
+                class="navBtn w-full bg-gray-200 rounded-l-lg p-2 lg:mb-5 hover:bg-gray-400"
                 id="vehicle-button"
                 data-item-type="vehicles"
               >
                 Vehicles
               </div>
               <div
-                class="navBtn w-full bg-gray-200 rounded-l-lg p-2 mb-5 hover:bg-gray-400"
+                class="navBtn w-full bg-gray-200 rounded-l-lg p-2 lg:mb-5 hover:bg-gray-400"
                 id="magic-items-button"
                 data-item-type="magic-items"
               >
                 Magic Items
               </div>
               <div
-                class="navBtn w-full bg-gray-200 rounded-l-lg p-2 mb-5 hover:bg-gray-400"
+                class="navBtn w-full bg-gray-200 rounded-l-lg p-2 lg:mb-5 hover:bg-gray-400"
                 id="books-button"
                 data-item-type="books"
               >
@@ -76,7 +78,7 @@
             <form id="items-selection" class="col-span-1 text-center">
               <div class="custom-select">
                 <select
-                  class="w-full bg-gray-200 rounded-l-lg p-2 mb-5"
+                  class="w-full bg-gray-200 rounded-l-lg p-2 lg:mb-5"
                   name="item-type"
                   id="item-type"
                 ></select>
@@ -94,9 +96,11 @@
         </div>
         <div
           id="item-cards"
-          class="col-span-1 h-full text-lg overflow-y-scroll text-center bg-gray-200 border-4 border-gray-400"
+          class="lg:col-span-1 row-span-4 h-full text-lg overflow-y-scroll text-center bg-gray-200"
         ></div>
-        <div class="col-span-1 grid grid-cols-1 bg-gray-500 h-full">
+        <div
+          class="hidden lg:visible lg:col-span-1 lg:grid grid-cols-1 bg-gray-500 h-full"
+        >
           <div
             class="rounded-r-3xl h-full"
             style="
@@ -105,11 +109,15 @@
             "
           >
             <div class="row-span-2 text-center" id="selected-item">
-              <h1 class="card-title bg-gray-400 rounded-r-lg p-2 mb-5">
+              <h1
+                class="card-title w-full bg-gray-400 rounded-r-lg p-2 mb-5 text-2xl"
+              >
                 Item Name
               </h1>
 
-              <h3 class="card-value w-full bg-gray-400 rounded-r-lg p-2 mb-5">
+              <h3
+                class="card-value w-full bg-gray-400 rounded-r-lg p-2 mb-5 text-2xl"
+              >
                 Value
               </h3>
             </div>

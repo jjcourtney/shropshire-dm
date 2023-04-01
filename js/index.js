@@ -104,7 +104,7 @@ const displayCard = (name) => {
   const cardTitle = document.createElement("h1");
   cardTitle.setAttribute(
     "class",
-    "card-title  w-full bg-gray-400 rounded-r-lg p-2 mb-5"
+    "card-title w-full bg-gray-400 rounded-r-lg p-2 mb-5 text-2xl"
   );
 
   cardTitle.textContent = vehicle.name;
@@ -115,7 +115,7 @@ const displayCard = (name) => {
   const cardValue = document.createElement("h3");
   cardValue.setAttribute(
     "class",
-    "card-value  w-full bg-gray-400 rounded-r-lg p-2 mb-5"
+    "card-value w-full bg-gray-400 rounded-r-lg p-2 mb-5 text-2xl"
   );
   cardValue.textContent = `Value: ${vehicle.card}`;
   selectedItem.append(cardValue);
